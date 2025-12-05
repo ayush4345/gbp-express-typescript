@@ -1,0 +1,493 @@
+# HOST/PORT config
+addr: localhost:8000
+
+# CORS config
+CORS: ["localhost", "genshinbanpick.com", ""]
+
+
+# Redis config
+redis_addr: localhost:6379
+redis_pwd: ""
+redis_db: 0
+
+# Response message configuration
+text_messages:
+
+  # Error message
+
+  ## Connection Error
+  params_required: "Param %s is required to connect to the game"
+  redis_error: "Redis connection error!!!"
+  redis_data_error: "Error data from redis"
+  already_join: "You have already join the game in other client!!"
+  player_disconnected: "Player %s has disconnected, the game will halt!!!"
+
+  ## Game Error
+  player_not_connected: "The other player are not connected yet! You can't not submit your move!!!"
+  enough_player: "There are already 2 players in this game. Cannot join!!!"
+  not_your_turn: "It is not your turn yet!!!"
+  invalid_data_type: "You have submitted the wrong data type for your move"
+  wrong_move: "Wrong move!!!"
+  data_input_error: "Data Input Error!!!"
+  already_chosen: "This card has already been banned or picked!!!!"
+  already_ended: "This game has already ended!!!"
+
+
+  # INFO message
+  waiting_player: "The game is created, waiting for the other player to connect.."
+  game_ready: "Both player are connected, the game is ready"
+  game_ended: "The game has ended!!!"
+  game_state_update: "New game state --> Update!!"
+  game_resume: "%s reconnected, the game will be resume!!!!"
+  game_state_return: "Returned game state for update!!"
+  watch_game_join: "%s has joined to watch the game!!!"
+  un_watch: "%s has left the game!!!"
+
+# Game format
+GAME_FORMAT_INFO:
+  "4":
+    abyss: 24
+    onslaught: 32
+  "3":
+    abyss: 22
+    onslaught: 30
+  "2":
+    abyss: 20
+    onslaught: 28
+  "1":
+    abyss: 18
+    onslaught: 26
+  "0":
+    abyss: 16
+    onslaught: 24
+GAME_TURN_FORMAT:
+  "4":
+    1:
+      pick: false
+      player: 1
+    2:
+      pick: false
+      player: 2
+    3:
+      pick: false
+      player: 1
+    4:
+      pick: false
+      player: 2
+    5:
+      pick: false
+      player: 1
+    6:
+      pick: false
+      player: 2
+    7:
+      pick: true
+      player: 1
+    8:
+      pick: true
+      player: 2
+    9:
+      pick: true
+      player: 2
+    10:
+      pick: true
+      player: 1
+    11:
+      pick: true
+      player: 1
+    12:
+      pick: true
+      player: 2
+    13:
+      pick: true
+      player: 2
+    14:
+      pick: true
+      player: 1
+    15:
+      pick: false
+      player: 1
+    16:
+      pick: false
+      player: 2
+    17:
+      pick: true
+      player: 2
+    18:
+      pick: true
+      player: 1
+    19:
+      pick: true
+      player: 1
+    20:
+      pick: true
+      player: 2
+    21:
+      pick: true
+      player: 2
+    22:
+      pick: true
+      player: 1
+    23:
+      pick: true
+      player: 1
+    24:
+      pick: true
+      player: 2
+    25:
+      pick: true
+      player: 2
+    26:
+      pick: true
+      player: 1
+    27:
+      pick: true
+      player: 1
+    28:
+      pick: true
+      player: 2
+    29:
+      pick: true
+      player: 2
+    30:
+      pick: true
+      player: 1
+    31:
+      pick: true
+      player: 1
+    32:
+      pick: true
+      player: 2
+  "3":
+    1:
+      pick: false
+      player: 1
+    2:
+      pick: false
+      player: 2
+    3:
+      pick: false
+      player: 1
+    4:
+      pick: false
+      player: 2
+    5:
+      pick: true
+      player: 1
+    6:
+      pick: true
+      player: 2
+    7:
+      pick: true
+      player: 2
+    8:
+      pick: true
+      player: 1
+    9:
+      pick: true
+      player: 1
+    10:
+      pick: true
+      player: 2
+    11:
+      pick: true
+      player: 2
+    12:
+      pick: true
+      player: 1
+    13:
+      pick: false
+      player: 1
+    14:
+      pick: false
+      player: 2
+    15:
+      pick: true
+      player: 2
+    16:
+      pick: true
+      player: 1
+    17:
+      pick: true
+      player: 1
+    18:
+      pick: true
+      player: 2
+    19:
+      pick: true
+      player: 2
+    20:
+      pick: true
+      player: 1
+    21:
+      pick: true
+      player: 1
+    22:
+      pick: true
+      player: 2
+    23:
+      pick: true
+      player: 2
+    24:
+      pick: true
+      player: 1
+    25:
+      pick: true
+      player: 1
+    26:
+      pick: true
+      player: 2
+    27:
+      pick: true
+      player: 2
+    28:
+      pick: true
+      player: 1
+    29:
+      pick: true
+      player: 1
+    30:
+      pick: true
+      player: 2
+  "2":
+    1:
+      pick: false
+      player: 1
+    2:
+      pick: false
+      player: 2
+    3:
+      pick: true
+      player: 1
+    4:
+      pick: true
+      player: 2
+    5:
+      pick: true
+      player: 2
+    6:
+      pick: true
+      player: 1
+    7:
+      pick: true
+      player: 1
+    8:
+      pick: true
+      player: 2
+    9:
+      pick: true
+      player: 2
+    10:
+      pick: true
+      player: 1
+    11:
+      pick: false
+      player: 1
+    12:
+      pick: false
+      player: 2
+    13:
+      pick: true
+      player: 2
+    14:
+      pick: true
+      player: 1
+    15:
+      pick: true
+      player: 1
+    16:
+      pick: true
+      player: 2
+    17:
+      pick: true
+      player: 2
+    18:
+      pick: true
+      player: 1
+    19:
+      pick: true
+      player: 1
+    20:
+      pick: true
+      player: 2
+    21:
+      pick: true
+      player: 2
+    22:
+      pick: true
+      player: 1
+    23:
+      pick: true
+      player: 1
+    24:
+      pick: true
+      player: 2
+    25:
+      pick: true
+      player: 2
+    26:
+      pick: true
+      player: 1
+    27:
+      pick: true
+      player: 1
+    28:
+      pick: true
+      player: 2
+  "1":
+    1:
+      pick: false
+      player: 1
+    2:
+      pick: false
+      player: 2
+    3:
+      pick: true
+      player: 1
+    4:
+      pick: true
+      player: 2
+    5:
+      pick: true
+      player: 2
+    6:
+      pick: true
+      player: 1
+    7:
+      pick: true
+      player: 1
+    8:
+      pick: true
+      player: 2
+    9:
+      pick: true
+      player: 2
+    10:
+      pick: true
+      player: 1
+    11:
+      pick: true
+      player: 2
+    12:
+      pick: true
+      player: 1
+    13:
+      pick: true
+      player: 1
+    14:
+      pick: true
+      player: 2
+    15:
+      pick: true
+      player: 2
+    16:
+      pick: true
+      player: 1
+    17:
+      pick: true
+      player: 1
+    18:
+      pick: true
+      player: 2
+    19:
+      pick: true
+      player: 2
+    20:
+      pick: true
+      player: 1
+    21:
+      pick: true
+      player: 1
+    22:
+      pick: true
+      player: 2
+    23:
+      pick: true
+      player: 2
+    24:
+      pick: true
+      player: 1
+    25:
+      pick: true
+      player: 1
+    26:
+      pick: true
+      player: 2
+  "0":
+    1:
+      pick: true
+      player: 1
+    2:
+      pick: true
+      player: 2
+    3:
+      pick: true
+      player: 2
+    4:
+      pick: true
+      player: 1
+    5:
+      pick: true
+      player: 1
+    6:
+      pick: true
+      player: 2
+    7:
+      pick: true
+      player: 2
+    8:
+      pick: true
+      player: 1
+    9:
+      pick: true
+      player: 2
+    10:
+      pick: true
+      player: 1
+    11:
+      pick: true
+      player: 1
+    12:
+      pick: true
+      player: 2
+    13:
+      pick: true
+      player: 2
+    14:
+      pick: true
+      player: 1
+    15:
+      pick: true
+      player: 1
+    16:
+      pick: true
+      player: 2
+    17:
+      pick: true
+      player: 2
+    18:
+      pick: true
+      player: 1
+    19:
+      pick: true
+      player: 1
+    20:
+      pick: true
+      player: 2
+    21:
+      pick: true
+      player: 2
+    22:
+      pick: true
+      player: 1
+    23:
+      pick: true
+      player: 1
+    24:
+      pick: true
+      player: 2
+
+
+# GAME Config
+
+AFTER_GAME_EXP: 3600      # seconds
