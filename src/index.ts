@@ -32,8 +32,14 @@ async function main() {
       // Allow requests with no origin (like mobile apps or curl requests)
       if (!origin) return callback(null, true);
       
+      // Check if empty string is in CORS list (allows all origins)
+      if (config.CORS.includes('')) {
+        callback(null, true);
+        return;
+      }
+      
       const hostname = new URL(origin).hostname;
-      if (containsString(config.CORS, hostname) || containsString(config.CORS, '')) {
+      if (containsString(config.CORS, hostname)) {
         callback(null, true);
       } else {
         console.log(`CORS blocked: ${hostname}`);

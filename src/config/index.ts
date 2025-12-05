@@ -32,8 +32,8 @@ export class GlobalConfig {
 
   static getTextMessage(key: string, ...args: any[]): string {
     let message = this.textMessages[key] || key;
-    args.forEach((arg, index) => {
-      message = message.replace(`%s`, String(arg));
+    args.forEach((arg) => {
+      message = message.replace('%s', String(arg));
     });
     return message;
   }
